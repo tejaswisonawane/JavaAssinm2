@@ -1,0 +1,447 @@
+
+Q1. 1. Find the Fibonacci Series up to Nth Term in Java Language
+a. Method 1: Using Iteration (Using Three variables)
+b. Method 2: Using Recursion
+c. Method 3: Using Formula a[i]=a[i-1]+a[i-2] (Using Array)
+package assignment1;
+
+public class FibonacciIteration {
+
+	public static void main(String[] args) {
+		int n=10;
+		int a=1,b=2,c;
+		System.out.println("Fibonacci Series up to " + n +" terms:");
+		for(int i=1;i<n;i++){
+			System.out.println(a + " ");
+			c=a+b;
+			a=b;
+			b=c;
+		}
+
+	}
+
+}
+
+package assignment1;
+
+public class FibonacciRecursion {
+
+	 static int fibonacci(int n) {
+		 if(n <= 1)
+			 return n;
+		 return fibonacci(n-1)+fibonacci(n-2);
+	 }
+	 public static void main(String[] args) {
+		int n=10;
+		System.out.println("Fibonacci Series up to " + n + " terms:");
+		for(int i=1 ; i<n; i++) {
+			System.out.println(fibonacci(i) + " ");
+		}
+	}
+		
+	}
+package assignment1;
+
+public class FibonacciArray {
+
+	public static void main(String[] args) {
+		int n=10;
+		int[] fib =new int[n];
+		fib[0]=1;
+		fib[1]=2;
+		System.out.println("Fibonacci Series up to" +n+ " terms :" );
+		System.out.println(fib[0]+"\n "+ fib[1] + " ");
+		for(int i=2; i<n; i++) {
+			fib[i]=fib[i-1]+ fib[i-2];
+			System.out.println(fib[i]+ " ");
+		}
+
+	}
+
+}
+
+
+Q2.2. Program to check Harshad number or not using Java
+Hint: - Harshad number is a number or an integer in base 10 which is
+completely divisible by sum of its digits.
+Example :
+Suppose a number 24 . Calculate the sum of digits of the number (2 +
+4) = 6 .
+Check whether the number entered by user is completely divisible by
+sum of its digits or not.
+
+PROGRAM 
+package assignment2;
+
+public class Harshad {
+
+	    public static void main(String[] args)
+		{
+			
+			int n = 47;
+			int result = 0;
+			
+			while(n != 0)
+			{
+				int pick_last = n % 10;
+				result = result + pick_last;
+				n = n / 10;
+			}
+			
+	      if(n % result == 0)
+	      System.out.println("Harshad Number");
+	          else
+	        System.out.println("Not a Harshad Number");
+	}
+	}
+
+3. Factorial of a Number using Recursion in Java
+Program-
+package assignment2;
+
+public class Factorial{
+	
+		static int factorial(int n){    
+			  if (n == 0)    
+			    return 1;    
+			  else    
+			    return(n * factorial(n-1));    
+			 }    
+			 public static void main(String args[]){  
+			  int i,fact=1;  
+			  int number=4;   
+			  fact = factorial(number);   
+			  System.out.println("Factorial of "+number+" is: "+fact);    
+			 }  
+			}  
+
+
+
+
+4. Java Program for Sorting first half in Ascending order and second half in
+Descending order
+Example
+Input : arr[6] = [1, 90, 34, 89, 7, 9]
+Output : 1 7 9 90 89 34
+Program-
+package assignment2;
+
+public class sorting {
+
+	 public static void main(String[] args) { 
+
+	       
+	       int [] arr = new int [] {10, 40, 30, 20}; 
+	       int temp = 0; 
+
+	       for (int i = 0; i < arr.length; i++) { 
+	           for (int j = i+1; j < arr.length; j++) { if(arr[i] > arr[j]) { 
+	                 temp = arr[i]; 
+	                 arr[i] = arr[j]; 
+	                 arr[j] = temp; 
+	              } 
+	           } 
+	       } 
+
+	    for (int i = 0; i < arr.length; i++) { 
+	     System.out.print(arr[i] + " "); 
+	   } 
+	  } 
+	}
+5. Java program to count numbers of even and odd elements in an array
+Program
+package assignment2;
+
+public class evenodd {
+
+	public static void main(String[] args) {
+		int a[]={1,2,5,6,3,2};  
+		System.out.println("Odd Numbers:");  
+		for(int i=0;i<a.length;i++){  
+		if(a[i]%2!=0){  
+		System.out.println(a[i]);  
+		}  
+		}  
+		System.out.println("Even Numbers:");  
+		for(int i=0;i<a.length;i++){  
+		if(a[i]%2==0){  
+		System.out.println(a[i]);  
+		}  
+		}  
+		
+
+	}
+
+}
+6. Java program for rotation of elements of array- left and right. An array is
+said to be right rotated if all the selected elements were moved towards
+right by one position.
+
+Program-
+package assignment2;
+
+public class rightrotate {
+
+	public static void main(String[] args) {
+		 int [] arr = new int [] {1, 2, 3, 4, 5};     
+	           
+	        int n = 3;    
+	           
+	         
+	        System.out.println("Original array: ");    
+	        for (int i = 0; i < arr.length; i++) {     
+	            System.out.print(arr[i] + " ");     
+	        }      
+	            
+	          
+	        for(int i = 0; i < n; i++){    
+	            int j, last;    
+	                
+	            last = arr[arr.length-1];    
+	            
+	            for(j = arr.length-1; j > 0; j--){    
+	                   
+	                arr[j] = arr[j-1];    
+	            }    
+	               
+	            arr[0] = last;    
+	        }    
+	        
+	        System.out.println();    
+	            
+	        
+	        System.out.println("Array after right rotation: ");    
+	        for(int i = 0; i< arr.length; i++){    
+	            System.out.print(arr[i] + " ");    
+	        }    
+	    }    
+}
+7.7. Rotate a matrix by 90 degree in clockwise direction in Java.
+program-
+package patterns;
+
+public class Q2 {
+		static int N = 4;
+		
+		static void rotate90Clockwise(int a[][])
+		{
+		 
+		  
+		    for (int i = 0; i < N / 2; i++)
+		    {
+		        for (int j = i; j < N - i - 1; j++)
+		        {
+		 
+		            int temp = a[i][j];
+		            a[i][j] = a[N - 1 - j][i];
+		            a[N - 1 - j][i] = a[N - 1 - i][N - 1 - j];
+		            a[N - 1 - i][N - 1 - j] = a[j][N - 1 - i];
+		            a[j][N - 1 - i] = temp;
+		        }
+		    }
+		}
+		 
+		static void printMatrix(int arr[][])
+		{
+		    for (int i = 0; i < N; i++)
+		    {
+		        for (int j = 0; j < N; j++)
+		        System.out.print( arr[i][j] + " ");
+		        System.out.println();
+		    }
+		}
+		 
+		 
+		    public static void main (String[] args) 
+		    {
+		            int arr[][] = { { 1, 2, 3, 4 },
+		                      { 5, 6, 7, 8 },
+		                      { 9, 10, 11, 12 },
+		                      { 13, 14, 15, 16 } };
+		    rotate90Clockwise(arr);
+		    printMatrix(arr);
+		    }
+
+	}
+
+
+}
+8. Create a student class with the following data members:- rollNo, Name,
+Course, Mark, grade, result. Develop function members to
+a. assign values for rollNo, name, course and mark.
+b. Find out the grade for the student(if mark &gt;90, then grade is A, if
+mark is between 80 and 90, then grade is B, if mark is between 70
+and 80, then grade is C, if mark is between 60 and 70, then grade
+is D, otherwise, grade is F.
+c. Find the result of the student. If mark&gt;60, then the result is Pass,
+otherwise Fail
+d. Print out the details of the student
+Program-
+public class Student {
+    int rollNo;
+    String name;
+    String course;
+    int mark;
+    char grade;
+    String result;
+
+       public void setValues(int r, String n, String c, int m) {
+        rollNo = r;
+        name = n;
+        course = c;
+        mark = m;
+    }
+
+  
+    public void findGrade() {
+        if (mark > 90) {
+            grade = 'A';
+        } else if (mark > 80) {
+            grade = 'B';
+        } else if (mark > 70) {
+            grade = 'C';
+        } else if (mark > 60) {
+            grade = 'D';
+        } else {
+            grade = 'F';
+        }
+    }
+
+
+    public void findResult() {
+        if (mark > 60) {
+            result = "Pass";
+        } else {
+            result = "Fail";
+        }
+    }
+
+   
+    public void printDetails() {
+        System.out.println("Roll No: " + rollNo);
+        System.out.println("Name: " + name);
+        System.out.println("Course: " + course);
+        System.out.println("Mark: " + mark);
+        System.out.println("Grade: " + grade);
+        System.out.println("Result: " + result);
+    }
+
+    public static void main(String[] args) {
+              Student student1 = new Student();
+        
+               student1.setValues(101, "John Doe", "Computer Science", 85);
+        
+               student1.findGrade();
+        student1.findResult();
+        student1.printDetails();
+    }
+}
+9. Create a class, named Account and include the required attributes and
+behaviours in it. Inherit another class called “SavingsAccount” from it
+and add new attributes and behaviours, as needed. Inherit another class
+called “LoanAccount” from Account and add new attributes and
+behaviours, as needed. Inherit another class called “HousingLoan” from
+LoanAccount and add new attributes and behaviours, as needed. Create
+objects of SavingsAccount and HousingLoan and perform the methods to
+1. Open an account, 2. Deposit amount, 3. Withdraw amount, 4. Print
+the account details. (Consider applying the Access Modifiers also)
+Program-
+class Account {
+    private String accountNumber;
+    private double balance;
+
+    public Account() {
+        this.accountNumber = "";
+        this.balance = 0.0;
+    }
+
+    public void openAccount(String accNumber) {
+        this.accountNumber = accNumber;
+        System.out.println("Account opened with account number: " + accNumber);
+    }
+
+    public void deposit(double amount) {
+        this.balance += amount;
+        System.out.println("Deposited: $" + amount);
+    }
+
+    public void withdraw(double amount) {
+        if (this.balance >= amount) {
+            this.balance -= amount;
+            System.out.println("Withdrew: " + amount);
+        } else {
+            System.out.println("Insufficient balance.");
+        }
+    }
+
+    public void printAccountDetails() {
+        System.out.println("Account Number: " + this.accountNumber + ", Balance: " + this.balance);
+    }
+}
+
+class SavingsAccount extends Account {
+    private double interestRate;
+
+    public SavingsAccount(double interestRate) {
+        super();
+        this.interestRate = interestRate;
+    }
+
+    public void applyInterest() {
+        double interest = super.balance * interestRate / 100;
+        super.deposit(interest);
+        System.out.println("Interest applied: " + interest);
+    }
+
+   
+}
+
+class LoanAccount extends Account {
+    private double interestRate;
+
+    public LoanAccount(double interestRate) {
+        super();
+        this.interestRate = interestRate;
+    }
+
+    public void applyInterest() {
+        double interest = super.balance * interestRate / 100;
+        super.withdraw(interest);
+        System.out.println("Interest applied: " + interest);
+    }
+
+
+}
+
+class HousingLoan extends LoanAccount {
+    private String propertyAddress;
+
+    public HousingLoan(double interestRate, String propertyAddress) {
+        super(interestRate);
+        this.propertyAddress = propertyAddress;
+    }
+
+    public void printLoanDetails() {
+        super.printAccountDetails();
+        System.out.println("Property Address: " + this.propertyAddress);
+    }
+
+
+}
+
+public class BankSystem {
+    public static void main(String[] args) {
+        SavingsAccount mySavings = new SavingsAccount(3.0); // Assuming 3% interest rate
+        mySavings.openAccount("SA123");
+        mySavings.deposit(1000);
+        mySavings.applyInterest();
+        mySavings.printAccountDetails();
+
+        HousingLoan myHousingLoan = new HousingLoan(5.0, "123 Main St."); // Assuming 5% interest rate
+        myHousingLoan.openAccount("HL456");
+        myHousingLoan.deposit(20000); // In context of a loan, consider this as the initial loan amount
+        myHousingLoan.applyInterest();
+        myHousingLoan.printLoanDetails();
+    }
+}
+
